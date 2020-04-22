@@ -9,8 +9,12 @@ class App < Sinatra::Base
   end
 
   post '/piglatinize' do
-    @analyzed_words = PigLatinizer.new.piglatinize(params[:user_phrase])
+  # post '/pig' do
+    # text_from_user = params[:user_text]
+    piglatinize = PigLatinizer.new
+    @analyzed_words = piglatinize.piglatinize(params[:user_phrase])
     erb :piglatinize
+    # erb :pig
   end
 
 end
